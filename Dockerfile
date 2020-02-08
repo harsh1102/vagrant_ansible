@@ -1,11 +1,10 @@
 FROM ubuntu
 
-RUN apt-get update
 RUN apt-get update -y && \
     apt-get install -y python-pip python-dev
     
-RUN groupadd -r docker && \
-    useradd -r -g docker docker
+#RUN groupadd -r docker && \
+ #   useradd -r -g docker docker
 
 USER docker
 
