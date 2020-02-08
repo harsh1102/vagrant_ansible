@@ -6,10 +6,10 @@
     container_name: flask_app
 
   tasks:
-    - name: Creates directory
-      file:
-        path: /home/webapps/devops
-        state: directory
+    #- name: Creates directory
+     # file:
+      #  path: /home/webapps/devops
+       # state: directory
 
     - name: Clone from github
       git:
