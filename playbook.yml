@@ -6,11 +6,6 @@
     container_name: flask_app
 
   tasks:
-    #- name: Creates directory
-     # file:
-      #  path: /home/webapps/devops
-       # state: directory
-
     - name: Clone from github
       git:
         repo: 'https://bitbucket.org/azneita/devops-challenge.git'
@@ -40,11 +35,6 @@
 
     - name: Update apt and install docker.io
       apt: update_cache=yes name=docker.io state=latest
-
-    #- name: Install Docker Module for Python
-     # pip:
-      #  name: docker
-       # executable: pip3
 
     - name: Build Docker image
       docker_image:
