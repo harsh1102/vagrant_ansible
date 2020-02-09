@@ -1,8 +1,8 @@
-# Vgarnat
+# Vagrant
 
-vagrant app using ansible to run flask app in docker
+vagrant app using ansible to run flask app in docker.
 
-## Installation 
+## Prerequisite 
 
 1) Install virtual box
 
@@ -10,8 +10,10 @@ vagrant app using ansible to run flask app in docker
 apt-get install virtualbox
 ```
 
-2) Install vgarnat
+2) Install vagrant
 
 ```bash 
 apt-get install vagrant
 ```
+
+
