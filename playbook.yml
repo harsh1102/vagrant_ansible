@@ -41,7 +41,7 @@
       #  name: docker
        # executable: pip3
 
-    - name: Pull default Docker image
+    - name: Build Docker image
       docker_image:
         name: "{{ container_image }}"
         build:
