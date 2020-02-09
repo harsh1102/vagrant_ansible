@@ -16,6 +16,11 @@
         repo: 'https://bitbucket.org/azneita/devops-challenge.git'
         dest: /home/webapps/devops
 
+    - name: Copy form /vagrant to /home
+      copy:
+        src: /vagrant/Dockerfile
+        dest: /home
+
     - name: Install aptitude using apt
       apt: name=aptitude state=latest update_cache=yes force_apt_get=yes
 
@@ -45,7 +50,7 @@
       docker_image:
         name: "{{ container_image }}"
         build:
-          path: ./
+          path: /home
           args:
             log_volume: /var/log/flask_app
         source: build

@@ -1,17 +1,15 @@
 FROM ubuntu
 
-RUN apt-get update
 RUN apt-get update -y && \
     apt-get install -y python-pip python-dev
     
-RUN groupadd -r docker && \
-    useradd -r -g docker docker
+#RUN groupadd -r docker && \
+#    useradd -r -g docker docker
 
-USER docker
+#USER docker
 
 RUN mkdir /app
-WORKDIR /app
-COPY ./ ./
+COPY webapps/devops/ .
 RUN pip install -r requirements.txt
 ENTRYPOINT [ "python" ]
 CMD [ "app.py" ]
