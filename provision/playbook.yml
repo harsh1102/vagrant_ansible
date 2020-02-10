@@ -16,6 +16,11 @@
         src: /vagrant/Dockerfile
         dest: /home
 
+    - name: Change app.py file
+      shell: |
+        sed -i 's/from werkzeug.contrib.fixers import ProxyFix/#from werkzeug.contrib.fixers import ProxyFix/g' /home/webapps/devops/app.py
+        sed -i 's/app.wsgi_app = ProxyFix(app.wsgi_app)/#app.wsgi_app = ProxyFix(app.wsgi_app)/g' /home/webapps/devops/app.py
+
     - name: Install aptitude using apt
       apt: name=aptitude state=latest update_cache=yes force_apt_get=yes
 
