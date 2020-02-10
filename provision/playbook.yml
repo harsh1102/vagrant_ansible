@@ -52,3 +52,6 @@
 
     - name: Create default containers
       command: docker run --restart always -d --name "{{ container_name }}" -p 80:5000 "{{ container_image }}" --log-opt max-size=10m --log-opt max-file=5
+    - name: Get listen ip address
+      debug:
+        var: ansible_enp0s8.ipv4.address
