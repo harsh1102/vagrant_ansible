@@ -10,7 +10,7 @@ RUN useradd -ms /bin/bash flaskuser
 USER flaskuser
 
 WORKDIR /home/flaskuser
-COPY webapps/devops/ .
+COPY /webapps/devops/ .
 RUN pip install -r requirements.txt
 ENTRYPOINT [ "python" ]
 CMD [ "app.py" ]
